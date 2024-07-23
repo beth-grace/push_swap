@@ -6,13 +6,20 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:22:51 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/23 17:13:59 by beefie           ###   ########.fr       */
+/*   Updated: 2024/07/23 18:13:52 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
+void	instructions(t_list **stacka, t_list **stackb, t_instrs instr)
+{
+	if (intrs == PA)
+	{
+		push(stacka, stackb);
+		ft_printf("pa");
+	}
+}
 
 void	swap(t_list **stack)
 {
