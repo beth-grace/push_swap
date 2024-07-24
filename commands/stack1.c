@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:22:51 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/23 18:13:52 by beefie           ###   ########.fr       */
+/*   Updated: 2024/07/24 12:12:14 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,36 @@
 
 void	instructions(t_list **stacka, t_list **stackb, t_instrs instr)
 {
-	if (intrs == PA)
-	{
+	if (instr == PA)
 		push(stacka, stackb);
-		ft_printf("pa");
+	else if (instr == PB)
+		push(stackb, stacka);
+	else if (instr == SA)
+		swap(stacka);
+	else if (instr == SB)
+		swap(stackb);
+	else if (instr == SS)
+	{
+		swap(stacka);
+		swap(stackb);
+	}
+	else if (instr == RA)
+		rotate(stacka);
+	else if (instr == RB)
+		rotate(stackb);
+	else if (instr == RR)
+	{
+		rotate(stacka);
+		rotate(stackb);
+	}
+	else if (instr == RRA)
+		reverse_rotate(stacka);
+	else if (instr == RRB)
+		reverse_rotate(stackb);
+	else if (instr == RRR)
+	{
+		reverse_rotate(stacka);
+		reverse_rotate(stackb);
 	}
 }
 

@@ -1,46 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   quick.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 15:37:52 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/23 18:04:35 by beefie           ###   ########.fr       */
+/*   Created: 2024/07/24 13:49:49 by beefie            #+#    #+#             */
+/*   Updated: 2024/07/24 15:31:35 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include "libft.h"
-
-typedef enum e_instrs
+void	quick(t_list **stack)
 {
-	PA,
-	PB,
-	SA,
-	SB,
-	SS,
-	RA,
-	RB,
-	RR,
-	RRA,
-	RRB,
-	RRR
-}	t_instrs
-
-typedef struct s_stack_a
-{
-	int		num;
-	void	*nextnum;
-}	t_stack_a;
-
-typedef struct s_stack_b
-{
-	int		num;
-	void	*nextnum;
-}	t_stack_b;
-
-
+	if ((*stack->content > (*stack)->next) && (*stack->content > (*stack)->next->next))
+		instructions(RA);
+	else if (((*stack)->next > *stack->content) && ((*stack)->next > (*stack)->next->next)
+		instructions(RRA);
+	if (*stack->content > (*stack)->next)
+		instructions(SA);
+}
