@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:49:49 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/27 15:21:56 by beefie           ###   ########.fr       */
+/*   Updated: 2024/07/30 18:12:31 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,46 @@
 
 void	quick3(t_list **stack) //Sort 3
 {
-	if ((*stack->content > (*stack)->next) && (*stack->content > (*stack)->next->next))
-		instructions(RA);
-	else if (((*stack)->next > *stack->content) && ((*stack)->next > (*stack)->next->next)
-		instructions(RRA);
-	if (*stack->content > (*stack)->next)
+	t_stack	*first;
+	t_stack	*second;
+	t_stack	*third;
+
+	first = *stack->content;
+	second = *stack->next->content;
+	third = *stack->next->next->content;
+	if ((first->index > second->index) && (first->index > third->index))
+		instructions(stacka, stackb, RA);
+	else if ((second->index > first->index) && (second->index > third->index))
+		instructions(stacka, stackb, RRA);
+	first = *stack->content;
+	second = *stack->next->content;
+	if (first->index > second->index)
 		instructions(SA);
 }
 
 void	quick4(t_list **stack)
 {
-	char	*first;
-	char	*second;
-	char	*third;
-	char	*fourth;
+	t_stack	*first;
+	t_stack	*second;
+	t_stack	*third;
+	t_stack	*fourth;
 
 	first = *stack->content;
-	second = *stack->next;
-	third = *stack->next->next;
-	fourth = *stack->next->next->next;
-	if ((second < first) && (second < third) && (second < fourth))
-		instructions(SA);
-	else if ((third < first) && (third < second) && (third < fourth))
+	second = *stack->next->content;
+	third = *stack->next->next->content;
+	fourth = *stack->next->next->next->content;
+	if ((second->index < first->index) && (second->index < third->index) && (second->index < fourth->index))
+		instructions(stacka,stackb,SA);
+	else if ((third->index < first->index) && (third->index < second->index) && (third->index < fourth->index))
 	{
-		instructions(RRA);
-		instructions(RRA);
+		instructions(stacka,stackb,RRA);
+		instructions(stacka,stackb,RRA);
 	}
-	else if ((fourth < first) && (fourth < second) && (fourth < third))
-		instructions(RRA);
-	instructions(PA);
+	else if ((fourth->index < first->index) && (fourth->index < second->index) && (fourth->index < third->index))
+		instructions(stacka,stackb,RRA);
+	instructions(stacka, stackb, PA);
 	quick3(stacka);
-	instructions(PB);
+	instructions(stacka, stackb, PB);
 }
 
 void	quick5(t_list **stack)
@@ -56,38 +65,37 @@ void	quick5(t_list **stack)
 	char	*fifth;
 
 	first = *stack->content;
-	second = *stack->next;
-	third = *stack->next->next;
-	fourth = *stack->next->next->next;
-	fifth = ft_lstlast(*stack);
-	if ((second > first) && (second > third) && (second > fourth) && (second > fifth))
-		instructions(SA);
+	second = *stack->next->content;
+	third = *stack->next->next->content;
+	fourth = *stack->next->next->next->content;
+	fifth = ft_lstlast(*stack)->content;
+	if ((second->index > first->index) && (second->index > third->index) && (second->index > fourth->index) && (second->index > fifth->index))
+		instructions(stacka, stackb, SA);
 	else if ((third > first) && (third > second) && (third > fourth) && (third > fifth))
 		thirdfat(stacka);
 	else if ((fourth > first) && (fourth > second) && (fourth > third) && (fourth > fifth))
 		fourthfat(stacka);
 	else if ((fifth > first) && (fifth > second) && (fifth > third) && (fifth > fourth))
-		instructions(RRA)
-	instructions(PA);
+		instructions(stacka, stackb,RRA)
+	instructions(stacka, stackb, PA);
 	quick4(stacka);
 	finish5(*stack);
 }
 
 void	thirdfat(t_list **stack)
 {
-	instructions(RRA);
-	instrcutions(RRA);
+	instructions(stacka, stackb, RRA);
+	instrcutions(stacka, stackb, RRA);
 }
 
 void	fourthfat(t_list **stack)
 {
-	instructions(RRA);
-	instructions(RRA);
+	instructions(stacka, stackb, RRA);
+	instructions(stacka, stackb, RRA);
 }
 
 void	finish5(t_list **stack)
 {
-	instructions(PB);
 	instructions(PB);
 	instructions(RA);
 }
