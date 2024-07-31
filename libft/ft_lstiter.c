@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:15:13 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/19 17:24:55 by beefie           ###   ########.fr       */
+/*   Updated: 2024/07/31 19:11:20 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst || !(*f))
+	if (!lst || !f)
 		return ;
 	while (lst)
 	{
-		lst = f(lst)
-		lst->next
+		f(lst->content);
+		lst = lst->next;
 	}
 	return;
 }

@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:37:52 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/29 18:57:28 by beefie           ###   ########.fr       */
+/*   Updated: 2024/07/31 19:45:50 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,28 @@ typedef enum e_instrs
 	RRA,
 	RRB,
 	RRR
-}	t_instrs
+}	t_instrs;
 
 typedef struct s_stack
 {
 	int	value;
 	int	index;
 }	t_stack;
+
+t_list	*ttstack(int argc, char **argv);
+t_stack	**ttarray(t_list *stack);
+int		bubble(t_stack **stack);
+void	set_index(t_stack **array);
+void	quick3(t_list **stacka, t_list **stackb);
+void	quick5(t_list **stacka, t_list **stackb);
+void	print_inst(t_instrs lol);
+void	instructions(t_list **stacka, t_list **stackb, t_instrs instr);
+void	find_three(t_list **stacka, t_list **stackb);
+void	thirdfat(t_list **stacka, t_list **stackb);
+void	fourthfat(t_list **stacka, t_list **stackb);
+void	finish5(t_list **stacka, t_list **stackb);
+void	swap(t_list **stack);
+void	push(t_list **stacka, t_list **stackb);
+void	rotate(t_list **stack);
+void	reverse_rotate(t_list **stack);
+# endif

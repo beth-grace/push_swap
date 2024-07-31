@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:22:51 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/24 12:12:14 by beefie           ###   ########.fr       */
+/*   Updated: 2024/07/31 19:47:22 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	push(t_list **stacka,t_list **stackb)
 	if (!*stackb)
 		return ;
 	fromb = *stackb;
-	first = *stacka
+	first = *stacka;
 	*stackb = (*stackb)->next;
 	*stacka = fromb;
 	fromb->next = first;
@@ -98,7 +98,7 @@ void	reverse_rotate(t_list **stack)
 	if (!*stack || !(*stack)->next)
 		return ;
 	first = *stack;
-	secondlast = *stack
+	secondlast = *stack;
 	while (secondlast->next->next != NULL)
 		secondlast = secondlast->next;
 	last = secondlast->next;

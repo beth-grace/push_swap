@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:13:58 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/17 18:32:10 by beefie           ###   ########.fr       */
+/*   Updated: 2024/07/31 19:06:53 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	last = *lst;
-	while (last>next != NULL)
+	while (last->next != NULL)
 		last = last->next;
 	last->next = new;
 }

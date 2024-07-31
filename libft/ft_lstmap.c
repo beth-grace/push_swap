@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:15:28 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/19 17:24:50 by beefie           ###   ########.fr       */
+/*   Updated: 2024/07/31 19:11:55 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,4 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*))
 		nl_next = &(*nl_next)->next;
 	}
 	return (new_list);
+}
