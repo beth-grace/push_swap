@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:22:51 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/31 19:47:22 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/01 15:43:49 by bmilford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	instructions(t_list **stacka, t_list **stackb, t_instrs instr)
 		reverse_rotate(stacka);
 		reverse_rotate(stackb);
 	}
+	print_inst(instr);
 }
 
 void	swap(t_list **stack)

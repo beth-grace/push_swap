@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:49:49 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/31 19:43:54 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/01 15:41:12 by bmilford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,23 @@ void	quick3(t_list **stacka, t_list **stackb) //Sort 3
 	t_stack	*second;
 	t_stack	*third;
 
-	first = (*stacka)->content;
-	second = (*stacka)->next->content;
-	third = (*stacka)->next->next->content;
-	if ((first->index > second->index) && (first->index > third->index))
-		instructions(stacka, stackb, RA);
-	else if ((second->index > first->index) && (second->index > third->index))
-		instructions(stacka, stackb, RRA);
-	first = (*stacka)->content;
-	second = (*stacka)->next->content;
-	if (first->index > second->index)
-		instructions(stacka, stackb, SA);
+	if (ft_lstsize(*stacka) > 2)
+	{
+		first = (*stacka)->content;
+		second = (*stacka)->next->content;
+		third = (*stacka)->next->next->content;
+		if ((first->index > second->index) && (first->index > third->index))
+			instructions(stacka, stackb, RA);
+		else if ((second->index > first->index) && (second->index > third->index))
+			instructions(stacka, stackb, RRA);
+	}
+	if (ft_lstsize(*stacka) > 1)
+	{
+		first = (*stacka)->content;
+		second = (*stacka)->next->content;
+		if (first->index > second->index)
+			instructions(stacka, stackb, SA);
+	}
 }
 
 void	quick4(t_list **stacka, t_list **stackb)

@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS = -Wall -Werror -Wextra $(DEBUG_FLAGS) -Ilibft
-DEBUG_FLAGS =
+DEBUG_FLAGS = -g
 NAME = push_swap
 SRC = main.c\
 	  array.c\
@@ -21,7 +21,7 @@ debug_cflags:
 	@$(eval DEBUG_FLAGS = -g)
 
 $(NAME): libft $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $@ -L$(FMLX) -Llibft -lft $(LFLAGS)
+	$(CC) $(CFLAGS) $(OBJ) -o $@ -Llibft -lft $(LFLAGS)
 
 
 libft:

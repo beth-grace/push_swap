@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 17:04:16 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/31 19:28:10 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/01 15:37:56 by bmilford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int	bubble(t_stack **array)
 
 	index = 0;
 	temp = 0;
-	while (*array)
+	while (array[index])
 	{
-		if (array[index]->value == array[index + 1]->value)
+		if (array[index + 1] != NULL && (array[index]->value == array[index + 1]->value))
 			return (1);
-		while ((array[index + 1] != NULL) && (array[index]->value > array[index + 1]->value))
+		while ((index >= 0 && array[index + 1] != NULL) && (array[index]->value > array[index + 1]->value))
 		{
 			temp = array[index]->value;
 			array[index] = array[index + 1];
