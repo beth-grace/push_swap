@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:15:13 by beefie            #+#    #+#             */
-/*   Updated: 2024/07/31 19:11:20 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/03 00:14:03 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		f(lst->content);
 		lst = lst->next;
 	}
-	return;
+	return ;
 }

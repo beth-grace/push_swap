@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 11:22:51 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/01 15:43:49 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/08/02 23:47:27 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,14 @@ void	instructions(t_list **stacka, t_list **stackb, t_instrs instr)
 		rotate(stacka);
 	else if (instr == RB)
 		rotate(stackb);
-	else if (instr == RR)
+	else if (instr == RR || instr == RRA || instr == RRB || instr == RRR)
+		inst2(stacka, stackb, instr);
+	print_inst(instr);
+}
+
+void	inst2(t_list **stacka, t_list **stackb, t_instrs instr)
+{
+	if (instr == RR)
 	{
 		rotate(stacka);
 		rotate(stackb);
@@ -45,7 +52,6 @@ void	instructions(t_list **stacka, t_list **stackb, t_instrs instr)
 		reverse_rotate(stacka);
 		reverse_rotate(stackb);
 	}
-	print_inst(instr);
 }
 
 void	swap(t_list **stack)
@@ -62,7 +68,7 @@ void	swap(t_list **stack)
 	second->next = first;
 }
 
-void	push(t_list **stacka,t_list **stackb)
+void	push(t_list **stacka, t_list **stackb)
 {
 	t_list	*first;
 	t_list	*fromb;
@@ -88,22 +94,4 @@ void	rotate(t_list **stack)
 	last = ft_lstlast(*stack);
 	last->next = first;
 	first->next = NULL;
-}
-
-void	reverse_rotate(t_list **stack)
-{
-	t_list	*first;
-	t_list	*last;
-	t_list	*secondlast;
-
-	if (!*stack || !(*stack)->next)
-		return ;
-	first = *stack;
-	secondlast = *stack;
-	while (secondlast->next->next != NULL)
-		secondlast = secondlast->next;
-	last = secondlast->next;
-	*stack = last;
-	last->next = first;
-	secondlast->next = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 18:14:29 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/02 17:46:55 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/03 00:02:56 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_inst(t_instrs lol)
 	else if ((last == RA && lol == RB) || (last == RB && lol == RA))
 	{
 		actual_print(RR);
-		last= -1;
+		last = -1;
 	}
 	else if ((last == RRA && lol == RRB) || (last == RRA && lol == RRB))
 	{
@@ -36,10 +36,13 @@ void	print_inst(t_instrs lol)
 	else if ((last == PA && lol == PB) || (last == PB && lol == PA))
 		last = -1;
 	else
-	{
-		actual_print(last);
-		last = lol;
-	}
+		last(lol);
+}
+
+void	last(t_instrs lol)
+{
+	actual_print(last);
+	last = lol;
 }
 
 void	actual_print(t_instrs instr)

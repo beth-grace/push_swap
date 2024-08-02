@@ -6,11 +6,12 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:36:15 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/02 19:50:07 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/02 23:52:13 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 t_list	*ttstack(int argc, char **argv)
 {
 	int		index;
@@ -41,7 +42,7 @@ t_list	*ttstack(int argc, char **argv)
 	return (list);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list		*stacka;
 	t_list		*stackb;
@@ -58,7 +59,6 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 		// bad
-
 	//ft_printf("post-bubble\n");
 	find_three(&stacka, &stackb);
 	//ft_printf("post-find_three\n");
