@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:36:15 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/01 16:06:10 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/08/02 19:50:07 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_list	*ttstack(int argc, char **argv)
 		if (err == 1)
 		{
 			ft_lstclear(&list, free);
+			ft_printf("error: NaN");
 			exit(1);
 		}
 		content->index = 0;
@@ -47,12 +48,22 @@ int main(int argc, char **argv)
 	t_stack		**array;
 
 	stacka = ttstack(argc, argv);
-	ft_printf("post stacka\n");
+	//ft_printf("post stacka\n");
 	array = ttarray(stacka);
-	ft_printf("post array\n");
-	bubble(array);
-	ft_printf("post-bubble\n");
+	//ft_printf("post array\n");
+	if (bubble(array))
+	{
+		ft_printf("error: doubles\n");
+		ft_lstclear(&stacka, free);
+		exit(1);
+	}
+		// bad
+
+	//ft_printf("post-bubble\n");
 	find_three(&stacka, &stackb);
-	ft_printf("post-find_three\n");
+	//ft_printf("post-find_three\n");
 	quick3(&stacka, &stackb);
+	while (stackb)
+		find_next(&stacka, &stackb);
+	print_inst(-1);
 }

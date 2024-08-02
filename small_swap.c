@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 13:49:49 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/01 15:41:12 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/08/02 19:30:30 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ void	quick3(t_list **stacka, t_list **stackb) //Sort 3
 		first = (*stacka)->content;
 		second = (*stacka)->next->content;
 		third = (*stacka)->next->next->content;
-		if ((first->index > second->index) && (first->index > third->index))
+		if ((first->value > second->value) && (first->value > third->value))
 			instructions(stacka, stackb, RA);
-		else if ((second->index > first->index) && (second->index > third->index))
+		else if ((second->value > first->value) && (second->value > third->value))
 			instructions(stacka, stackb, RRA);
 	}
 	if (ft_lstsize(*stacka) > 1)
 	{
 		first = (*stacka)->content;
 		second = (*stacka)->next->content;
-		if (first->index > second->index)
+		if (first->value > second->value)
 			instructions(stacka, stackb, SA);
 	}
 }
@@ -48,14 +48,14 @@ void	quick4(t_list **stacka, t_list **stackb)
 	second = (*stacka)->next->content;
 	third = (*stacka)->next->next->content;
 	fourth = (*stacka)->next->next->next->content;
-	if ((second->index < first->index) && (second->index < third->index) && (second->index < fourth->index))
+	if ((second->value < first->value) && (second->value < third->value) && (second->value < fourth->value))
 		instructions(stacka,stackb,SA);
-	else if ((third->index < first->index) && (third->index < second->index) && (third->index < fourth->index))
+	else if ((third->value < first->value) && (third->value < second->value) && (third->value < fourth->value))
 	{
 		instructions(stacka,stackb,RRA);
 		instructions(stacka,stackb,RRA);
 	}
-	else if ((fourth->index < first->index) && (fourth->index < second->index) && (fourth->index < third->index))
+	else if ((fourth->value < first->value) && (fourth->value < second->value) && (fourth->value < third->value))
 		instructions(stacka,stackb,RRA);
 	instructions(stacka, stackb, PA);
 	quick3(stacka, stackb);
@@ -75,7 +75,7 @@ void	quick5(t_list **stacka, t_list **stackb)
 	third = (*stacka)->next->next->content;
 	fourth = (*stacka)->next->next->next->content;
 	fifth = ft_lstlast(*stacka)->content;
-	if ((second->index > first->index) && (second->index > third->index) && (second->index > fourth->index) && (second->index > fifth->index))
+	if ((second->value > first->value) && (second->value > third->value) && (second->value > fourth->value) && (second->value > fifth->value))
 		instructions(stacka, stackb, SA);
 	else if ((third > first) && (third > second) && (third > fourth) && (third > fifth))
 		thirdfat(stacka, stackb);

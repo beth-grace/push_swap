@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 18:14:29 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/01 16:04:45 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/08/02 17:46:55 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_inst(t_instrs lol)
 {
 	static t_instrs	last = -1;
 
-	if (last < 0)
+	if (last == (t_instrs)-1)
 		last = lol;
 	else if ((last == SA && lol == SB) || (last == SB && lol == SA))
 	{
