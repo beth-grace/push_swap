@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:37:52 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/03 00:02:36 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/03 00:18:02 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,6 @@ void	actual_print(t_instrs instr);
 void	find_next(t_list **stacka, t_list **stackb);
 int		is_stack_sorted(t_list *stacka);
 void	inst2(t_list **stacka, t_list **stackb, t_instrs instr);
-void	work_back(int index);
+void	work_back(t_list **stacka, t_list **stackb, int index);
 void	last(t_instrs lol);
 #endif

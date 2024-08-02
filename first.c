@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 16:52:23 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/02 23:58:22 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/03 00:18:40 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ void	find_next(t_list **stacka, t_list **stackb)
 		}
 	}
 	else
-		work_back(index);
+		work_back(stacka, stackb, index);
 	instructions(stacka, stackb, PA);
 }
 
-void	work_back(int index)
+void	work_back(t_list **stacka, t_list **stackb, int index)
 {
 	while (index > 0)
 	{
