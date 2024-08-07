@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 18:14:29 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/03 00:02:56 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/07 17:49:40 by bmilford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ void	print_inst(t_instrs lol)
 	else if ((last == PA && lol == PB) || (last == PB && lol == PA))
 		last = -1;
 	else
-		last(lol);
+		last_time(lol, &last);
 }
 
-void	last(t_instrs lol)
+void	last_time(t_instrs lol, t_instrs *last)
 {
-	actual_print(last);
-	last = lol;
+	actual_print(*last);
+	*last = lol;
 }
 
 void	actual_print(t_instrs instr)

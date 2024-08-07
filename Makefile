@@ -7,6 +7,7 @@ SRC = main.c\
 	  first.c\
 	  small_swap.c\
 	  stack1.c\
+	  stack2.c\
 	  print.c\
 
 OBJ = $(patsubst %.c,%.o,$(SRC))

@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:37:52 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/03 00:18:02 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/07 17:50:17 by bmilford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,9 @@ t_stack	**ttarray(t_list *stack);
 int		bubble(t_stack **stack);
 void	set_index(t_stack **array, int len);
 void	quick3(t_list **stacka, t_list **stackb);
-void	quick5(t_list **stacka, t_list **stackb);
 void	print_inst(t_instrs lol);
 void	instructions(t_list **stacka, t_list **stackb, t_instrs instr);
 void	find_three(t_list **stacka, t_list **stackb);
-void	thirdfat(t_list **stacka, t_list **stackb);
-void	fourthfat(t_list **stacka, t_list **stackb);
-void	finish5(t_list **stacka, t_list **stackb);
 void	swap(t_list **stack);
 void	push(t_list **stacka, t_list **stackb);
 void	rotate(t_list **stack);
@@ -58,5 +54,6 @@ void	find_next(t_list **stacka, t_list **stackb);
 int		is_stack_sorted(t_list *stacka);
 void	inst2(t_list **stacka, t_list **stackb, t_instrs instr);
 void	work_back(t_list **stacka, t_list **stackb, int index);
-void	last(t_instrs lol);
+void	last_time(t_instrs lol, t_instrs *last);
+void	ttstack_er(t_list **list);
 #endif
