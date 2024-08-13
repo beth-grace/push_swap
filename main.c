@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:36:15 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/07 18:01:52 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/08/10 15:30:58 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,21 @@ int	main(int argc, char **argv)
 	t_stack		**array;
 
 	stacka = ttstack(argc, argv);
+	stackb = 0;
 	array = ttarray(stacka);
 	if (bubble(array))
 	{
 		ft_printf("error\n");
 		ft_lstclear(&stacka, free);
+		free(array);
 		exit(1);
 	}
+	free(array);
 	find_three(&stacka, &stackb);
 	quick3(&stacka, &stackb);
 	while (stackb)
 		find_next(&stacka, &stackb);
 	print_inst(-1);
+	ft_lstclear(&stacka);
+	ft_lstclear(&stackb);
 }
