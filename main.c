@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:36:15 by beefie            #+#    #+#             */
-/*   Updated: 2024/08/10 15:30:58 by beefie           ###   ########.fr       */
+/*   Updated: 2024/08/13 17:15:13 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ t_list	*ttstack(int argc, char **argv)
 	{
 		content = malloc(sizeof(t_stack));
 		content->value = ft_atoi_strict(argv[index], &err);
-		if (err == 1)
-			ttstack_er(&list);
 		content->index = 0;
 		*tmp = ft_lstnew(content);
 		tmp = &((*tmp)->next);
+		if (err == 1)
+			ttstack_er(&list);
 		index++;
 	}
 	return (list);
@@ -67,6 +67,6 @@ int	main(int argc, char **argv)
 	while (stackb)
 		find_next(&stacka, &stackb);
 	print_inst(-1);
-	ft_lstclear(&stacka);
-	ft_lstclear(&stackb);
+	ft_lstclear(&stacka, free);
+	ft_lstclear(&stackb, free);
 }
